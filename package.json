@@ -385,16 +385,18 @@
     "workspace"
   ],
   "scripts": {
-    "vscode:prepublish": "npm run buildsyntax && tsc -p ./",
+    "vscode:prepublish": "npm run downloadjar && npm run buildsyntax && tsc -p ./",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "buildsyntax": "node ./scripts/build-syntax.js"
+    "buildsyntax": "node ./scripts/build-syntax.js",
+    "downloadjar": "node ./scripts/download-jar.js"
   },
   "devDependencies": {
     "@types/mocha": "^9.1.1",
     "@types/node": "^16.0.0",
     "@types/vscode": "^1.57.0",
     "@vscode/vsce": "^2.32.0",
+    "https-proxy-agent": "^5.0.1",
     "js-yaml": "^3.13.1",
     "markdown-it": "^13.0.1",
     "plist": "^3.0.2",
